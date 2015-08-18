@@ -1,0 +1,2 @@
+thermostat = new Thermostat();
+
