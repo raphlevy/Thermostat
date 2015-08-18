@@ -25,7 +25,7 @@ Thermostat.prototype.decrease = function() {
   };
 };
 
-Thermostat.prototype.reset = function() {
+Thermostat.prototype.resetTemp = function() {
   return this.temp = this.defaultTemp;
 };
 
@@ -59,4 +59,14 @@ Thermostat.prototype.isLowerMax = function(number) {
         return false;
       };
     };
+ };
+
+ Thermostat.prototype.colour = function() {
+  if (this.temp <18 ) {
+    return "green";
+  } else if (this.temp <25) {
+    return "yellow";
+  } else {
+    return "red";
+  };
  };

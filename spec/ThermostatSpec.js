@@ -25,7 +25,7 @@ describe('Thermostat', function() {
     });
     it ('can reset the temp to default temperature', function() {
       var tempTest = thermostat.temp+1;
-      expect(thermostat.reset()).toEqual(thermostat.defaultTemp);
+      expect(thermostat.resetTemp()).toEqual(thermostat.defaultTemp);
     });
   });
 
@@ -39,12 +39,12 @@ describe('Thermostat', function() {
     });
 
     it ('does not reduce temp below 10', function() {
-      thermostat.temp = 10
+      thermostat.temp = 10;
       expect(thermostat.decrease()).toEqual(10);
     });
 
     it ('can switch mode', function() {
-      thermostat.switchMode()
+      thermostat.switchMode();
       expect(thermostat.powerSave).toBe(false);
     });
 
@@ -52,18 +52,35 @@ describe('Thermostat', function() {
       expect(thermostat.isLowerMax(thermostat.temp)).toBe(true);
     });
      it ('knows temp is above max 32 when saving mode is off', function() {
-      thermostat.powerSave = false
+      thermostat.powerSave = false;
       expect(thermostat.isLowerMax(thermostat.temp)).toBe(true);
     });
 
     it ('knows temp is above max 25 when saving mode is on', function() {
-      thermostat.temp = 26
+      thermostat.temp = 26;
       expect(thermostat.isLowerMax(thermostat.temp)).toBe(false);
     });
     it ('knows temp is above max 32 when saving mode is off', function() {
-      thermostat.powerSave = false
-      thermostat.temp = 33
+      thermostat.powerSave = false;
+      thermostat.temp = 33;
       expect(thermostat.isLowerMax(thermostat.temp)).toBe(false);
+    });
+  });
+
+  describe('changes colour', function() {
+    it('displays green when temp is below 18', function() {
+      thermostat.temp = 17;
+      expect(thermostat.colour()).toEqual("green");
+    });
+
+    it('dispalys yellow when temp is above 18 and below 25', function() {
+      thermostat.temp = 19;
+      expect(thermostat.colour()).toEqual("yellow");
+    });
+
+    it('displays red when temp is above 25', function() {
+      thermostat.temp = 25;
+      expect(thermostat.colour()).toEqual("red");
     });
 
   });
