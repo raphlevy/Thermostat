@@ -1,8 +1,9 @@
-var Thermostat = function() {};
+var Thermostat = function() {
+  var defaultTemp = 20;
+  var temp = defaultTemp;
+  var powerSave = true;
+};
 
-var defaultTemp = 20;
-var temp = defaultTemp;
-var powerSave = true
 
 Thermostat.prototype.currentTemp = function() {
   return temp;

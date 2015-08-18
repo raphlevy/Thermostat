@@ -31,7 +31,7 @@ describe('Thermostat', function() {
 
   describe('temp limits', function() {
 
-    it ('knows temp is above than minimum 10', function() {
+    it ('knows temp is above minimum 10', function() {
       expect(thermostat.isAboveMin(temp)).toBe(true);
     });
     it ('know temps is lower than minimum 10', function() {
@@ -48,7 +48,7 @@ describe('Thermostat', function() {
       expect(powerSave).toBe(false);
     });
 
-     it ('knows temp is lower max 25 when saving mode is on', function() {
+     it ('knows temp is lower than max 25 when saving mode is on', function() {
       expect(thermostat.isLowerMax(temp)).toBe(true);
     });
      it ('knows temp is above max 32 when saving mode is off', function() {
