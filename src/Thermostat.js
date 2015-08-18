@@ -9,7 +9,11 @@ Thermostat.prototype.currentTemp = function() {
 };
 
 Thermostat.prototype.increase = function() {
-  return temp += 1;
+  if (this.isLowerMax(temp)){
+    return temp += 1;
+    } else {
+    return temp;
+  };
 };
 
 Thermostat.prototype.decrease = function() {
@@ -40,3 +44,18 @@ Thermostat.prototype.switchMode = function() {
   };
 };
 
+Thermostat.prototype.isLowerMax = function(number) {
+    if (powerSave === true) {
+      if (number<25) {
+        return true;
+      } else {
+        return false;
+      };
+    } else {
+      if (number<32) {
+        return true;
+      } else {
+        return false;
+      };
+    };
+ };
