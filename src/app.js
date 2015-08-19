@@ -1,11 +1,14 @@
 thermostat = new Thermostat();
 
-var temperature = document.getElementsByTagName('span')[0];
-temperature.innerHTML = thermostat.temp;
-
 Update = function() {
   temperature.innerHTML = thermostat.temp;
+  temperature.style.color = thermostat.colour();
 }
+
+var temperature = document.getElementsByTagName('span')[0];
+temperature.innerHTML = thermostat.temp;
+Update();
+
 
 var increase_temperature = document.getElementsByTagName('input')[0];
 increase_temperature.onclick = function() {
