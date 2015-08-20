@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="">
+<script src='jquery.js'></script>
 <meta charset="UTF-8">
 <title>mythermostat</title>
 </head>
 <body>
 
 <h1> Thermostat </h1>
-<h2>  <span> "temperature" </span>°C</h2>
+<h2>  <span class="temperature"> "temperature" </span>°C <p id="weather_api"> </p>
+<form onsubmit="return false">
+<input type="text" id='city'>
+<input type="button" id='city_submit' value='submit'>
+</form>
+</h2>
 <h3>
-<input value='+' type='button' name='increase'>
-<input value='-' type='button' name='decrease'>
-<input value='RESET' type='button' name='reset'>
+<input value='+' type='button' class='increase'>
+<input value='-' type='button' class='decrease'>
+<input value='RESET' type='button' class='reset'>
 </h3>
-<h4>Power Saving Mode <input type='checkbox' name='powersave' value='on' checked></h4>
+<h4>Power Saving Mode <input type='checkbox' class='powersave' value='on' checked></h4>
 
 <script src='Thermostat.js'></script>
-<script src='app.js'></script>
+<script src='app_jquery.js'></script>
 </body>
 </html>
