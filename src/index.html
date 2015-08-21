@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="">
+<link rel="stylesheet" type="text/css" href="../css/index.css">
 <script src='jquery.js'></script>
+
+<script src="lib/jquery.min.js"></script>
+<script src="spec/hold.js"></script>
+<script src="bower_components/jasmine-jquery.js/lib/jasmine-jquery.js"></script>
+
+
 <meta charset="UTF-8">
 <title>mythermostat</title>
 </head>
@@ -11,14 +17,20 @@
 <h1> Thermostat </h1>
 <h2>  <span class="temperature"> "temperature" </span>°C <p id="weather_api"> </p>
 <form onsubmit="return false">
-<input type="text" id='city'>
+
+<ul class="input-list style-1 clearfix">
+<input type="text" placeholder=":input" id='city' value='Enter a city...'>
+</ul>
 <input type="button" id='city_submit' value='submit'>
+
 </form>
 </h2>
 <h3>
-<input value='+' type='button' class='increase'>
-<input value='-' type='button' class='decrease'>
-<input value='RESET' type='button' class='reset'>
+<section class="press">
+<button value='+' type='button' class='increase'>Up </button>
+<button value='-' type='button' class='decrease'>Down </button>
+<button value='RESET' type='button' class='reset'> RESET </button>
+</section>
 </h3>
 <h4>Power Saving Mode <input type='checkbox' class='powersave' value='on' checked></h4>
 
